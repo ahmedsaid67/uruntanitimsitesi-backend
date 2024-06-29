@@ -220,6 +220,26 @@ class HizliLinkler(models.Model):
     durum = models.BooleanField(default=True)
     is_removed = models.BooleanField(default=False)
 
+#### iletişim
+
+class Contact(models.Model):
+    address = models.CharField(max_length=255, blank=True, null=True)
+    phone1 = models.CharField(max_length=20, blank=True, null=True)
+    phone2 = models.CharField(max_length=20, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Contact {self.id}"
+
+
+# hakkımızda
+
+class Hakkimizda(models.Model):
+    content = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return "Hakkımızda"
+
 
 
 
