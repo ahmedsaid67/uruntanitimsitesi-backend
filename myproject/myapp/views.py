@@ -827,3 +827,26 @@ class HizliLinklerViewSet(viewsets.ModelViewSet):
         # Varsayılan paginasyonu devre dışı bırak
         serializer = self.get_serializer(active, many=True)
         return Response(serializer.data)
+
+
+
+
+#iletişim
+
+
+from .models import Contact
+from .serializers import ContactSerializer
+
+class ContactViewSet(viewsets.ModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+
+
+from .models import Hakkimizda
+from .serializers import HakkimizdaSerializer
+
+# hakkımızda
+
+class HakkimizdaViewSet(viewsets.ModelViewSet):
+    queryset = Hakkimizda.objects.all()
+    serializer_class = HakkimizdaSerializer
