@@ -160,3 +160,26 @@ class HizliLinklerSerializer(serializers.ModelSerializer):
     class Meta:
         model = HizliLinkler
         fields = '__all__'
+
+
+
+# iletişim
+
+from .models import Contact
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'
+
+
+
+# hakkimizda
+
+from .models import Hakkimizda
+
+class HakkimizdaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hakkimizda
+        fields = '__all__'
+
