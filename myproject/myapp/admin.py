@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
-from .models import Menu,MenuItem,Sliders,UrunKategori,UrunVitrin,Urunler,Image,SosyalMedya,References,HizliLinkler
+from .models import Menu,MenuItem,Sliders,UrunKategori,UrunVitrin,Urunler,Image,SosyalMedya,References,HizliLinkler,Contact,Hakkimizda
 
 
 admin.site.register(Menu)
@@ -15,3 +15,5 @@ admin.site.register(Image)
 admin.site.register(SosyalMedya)
 admin.site.register(References)
 admin.site.register(HizliLinkler)
+admin.site.register(Contact)
+admin.site.register(Hakkimizda)
