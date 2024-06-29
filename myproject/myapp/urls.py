@@ -2,7 +2,7 @@ from django.urls import path, include
 from .views import  MenuViewSet, MenuItemListCreateView, MenuItemByMenuView, \
     MenuItemDetailView, MenuSelectedItemViewSet,SlidersViewSet,UrunKategoriViewSet,UrunKategoriListView, CheckToken,CustomAuthToken,Logout,\
     UserInfoView,UrunVitrinListView,UrunlerViewSet,UrunVitrinViewSet,\
-    ImageViewSet,SosyalMedyaViewSet,ReferencesViewSet,HizliLinklerViewSet
+    ImageViewSet,SosyalMedyaViewSet,ReferencesViewSet,HizliLinklerViewSet, ContactViewSet, HakkimizdaViewSet
 from rest_framework.routers import DefaultRouter
 
 from django.conf import settings
@@ -46,7 +46,13 @@ router_references.register(r'references', ReferencesViewSet)
 router_hizlilinkler = DefaultRouter()
 router_hizlilinkler.register(r'hizlilinkler', HizliLinklerViewSet)
 
+#iletisim
+router_contact = DefaultRouter()
+router_contact.register(r'contact', ContactViewSet)
 
+#hakkımızda
+router_hakkimizda = DefaultRouter()
+router_hakkimizda.register(r'hakkimizda', HakkimizdaViewSet)
 
 urlpatterns = [
 
@@ -88,6 +94,11 @@ urlpatterns = [
     #hızlılinkler
     path('', include(router_hizlilinkler.urls)),
 
+    #iletişim
+    path('', include(router_contact.urls)),
+
+    #hakkimizda
+    path('', include(router_hakkimizda.urls)),
 
 
     # auth apileri
