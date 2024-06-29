@@ -838,7 +838,7 @@ from .models import Contact
 from .serializers import ContactSerializer
 
 class ContactViewSet(viewsets.ModelViewSet):
-    queryset = Contact.objects.all()
+    queryset = Contact.objects.all().order_by('id')
     serializer_class = ContactSerializer
 
 
@@ -848,5 +848,5 @@ from .serializers import HakkimizdaSerializer
 # hakkımızda
 
 class HakkimizdaViewSet(viewsets.ModelViewSet):
-    queryset = Hakkimizda.objects.all()
+    queryset = Hakkimizda.objects.all().order_by('id')
     serializer_class = HakkimizdaSerializer
